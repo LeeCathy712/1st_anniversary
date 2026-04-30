@@ -1,0 +1,59 @@
+<!--
+    ========================================================================================
+    version      date            author            Remark
+    ========================================================================================
+    1.00         2026.04.30      Catherine         First edition release
+    ========================================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我們的一周年</title>
+  <link rel="stylesheet" href="style.css?v=20260428-1">
+</head>
+
+<body>
+  <!-- 密碼頁 -->
+  <section id="loginPage" class="page login-page">
+    <div class="card">
+      <h1>我們的一周年</h1>
+      <p>請輸入我們的紀念密碼</p>
+
+      <input type="password" id="passwordInput" placeholder="輸入密碼" />
+      <button onclick="checkPassword()">進入</button>
+
+      <p id="errorMessage"></p>
+    </div>
+  </section>
+
+  <!-- 故事頁 -->
+  <section id="storyPage" class="page story-page hidden">
+    <audio id="bgm" src="music/bgm.mp3" loop></audio>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <button class="music-btn" onclick="toggleMusic()">♪</button>
+
+    <div id="pageMenu" class="page-menu hidden">
+    <h3>快速切換</h3>
+    <div id="menuList"></div>
+    </div>
+
+    <div class="story-card">
+      <p id="storyDate" class="story-date"></p>
+      <h1 id="storyTitle"></h1>
+      <div class="photo-touch-zone">
+        <div class="photo-slider" id="photoSlider"></div>
+      </div>
+      <p id="storyText"></p>
+      <div id="checklistArea"></div>
+
+      <div class="dots" id="pageDots"></div>
+    </div>
+  </section>
+
+  <script src="script.js?v=20260428-1"></script>
+</body>
+</html>

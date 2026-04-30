@@ -1,0 +1,409 @@
+/* 
+  ========================================================================================
+  version      date            author            Remark
+  ========================================================================================
+  1.00         2026.04.30      Catherine         First edition release
+  ========================================================================================
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Microsoft JhengHei", sans-serif;
+  background: #fff7f0;
+  color: #4a3b35;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 密碼頁 */
+.login-page {
+  background: linear-gradient(135deg, #fff7f0, #ffe4e1);
+}
+
+.card {
+  width: 90%;
+  max-width: 380px;
+  background: white;
+  padding: 36px 28px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card h1 {
+  margin-bottom: 12px;
+}
+
+.card input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  margin-top: 16px;
+  background: #dfa878;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c98f5f;
+}
+
+#errorMessage {
+  color: #d9534f;
+  margin-top: 12px;
+}
+
+/* 故事頁 */
+.story-page {
+  background: #fff7f0;
+  padding: 20px;
+}
+
+.story-card {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+/* 照片滑動 */
+.photo-slider {
+  display: flex;
+  gap: 12px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 16px;
+  background: #fff;
+}
+
+.photo-slider img {
+  flex: 0 0 72%;
+
+  max-height: 420px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 22px;
+
+  scroll-snap-align: center;
+
+  /*filter: grayscale(100%);*/
+  opacity: 0.45;
+  transform: scale(0.92);
+
+  transition: 0.35s ease;
+}
+
+.photo-slider img.active-photo {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.photo-slider.single-photo {
+  justify-content: center;
+}
+/* 照片滑動 */
+
+/* 照片小圓點 */
+.photo-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: -4px;
+  margin-bottom: 12px;
+}
+
+.photo-dot {
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background: #d8c3b2;
+  opacity: 0.45;
+  cursor: pointer;
+}
+
+.photo-dot.active-photo-dot {
+  width: 13px;
+  border-radius: 999px;
+  background: #dfa878;
+  opacity: 1;
+}
+/* 照片小圓點 */
+
+.story-card h1 {
+  margin: 8px 24px;
+  font-size: 28px;
+}
+
+.story-card p {
+  margin: 16px 28px;
+  line-height: 1.8;
+  font-size: 20px;
+  white-space: pre-line;
+  text-align: center;
+}
+
+.story-date {
+  margin-top: 24px;
+  color: #b0805c;
+  font-size: 14px;
+  text-align: center;
+}
+
+.story-card .story-date {
+  text-align: center;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 0 26px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background: #d8c3b2;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.dot.active-dot {
+  width: 22px;
+  border-radius: 999px;
+  background: #dfa878;
+  opacity: 1;
+}
+
+#pageIndicator {
+  font-size: 14px;
+  color: #8b6f5a;
+}
+
+.music-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CheckList */
+#checklistArea {
+  margin: 10px 28px 24px;
+  text-align: left;
+}
+
+.check-item {
+  display: block;
+  margin: 10px 0;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.check-item input {
+  margin-right: 8px;
+}
+/* CheckList */
+
+/*選單*/
+.menu-btn {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.page-menu {
+  position: fixed;
+  top: 72px;
+  left: 18px;
+  z-index: 999;
+  width: 220px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.page-menu h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.page-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.page-menu::-webkit-scrollbar-thumb {
+  background: #e0c3a8;
+  border-radius: 6px;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: #f4e3d6;
+  color: #4a3b35;
+  text-align: left;
+}
+
+.menu-item:hover,
+.active-menu-item {
+  background: #dfa878;
+  color: white;
+}
+/*選單*/
+
+/* 手機版 */
+@media (max-width: 480px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .photo-slider {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  }
+
+  .story-page {
+    height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .story-card {
+    width: 92vw;
+    max-width: 92vw;
+    max-height: 92dvh;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .photo-slider {
+    width: 100%;
+    padding: 8px;
+    gap: 8px;
+    touch-action: pan-x;
+  }
+
+  .photo-slider img {
+    flex: 0 0 82%;
+
+    width: 82%;
+    height: auto;
+    max-height: 260px;
+
+    object-fit: contain;
+    border-radius: 16px;
+  }
+
+  .photo-touch-zone {
+  padding: 12px 0;
+  touch-action: pan-x;
+  }
+
+  .photo-slider.single-photo {
+    justify-content: center;
+  }
+
+  .story-card h1 {
+    font-size: 22px;
+    margin: 6px 18px;
+  }
+
+  .story-card p {
+    font-size: 14px;
+    margin: 10px 20px;
+    line-height: 1.7;
+  }
+
+  .story-date {
+    font-size: 13px;
+    margin-top: 14px;
+  }
+
+  .dot-more {
+  color: #b0805c;
+  font-size: 14px;
+  line-height: 1;
+  }
+}
+/* 手機版 */

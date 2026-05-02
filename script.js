@@ -3,7 +3,7 @@
   version      date            author            Remark
   ========================================================================================
   1.00         2026.04.30      Catherine         First edition release
-  1.01         2026.05.02      Catherine         Add 4/12 & 5/1 date
+  1.01         2026.05.02      Catherine         Add 4/12 & 5/1 date & BGM
   ========================================================================================
 */
 
@@ -551,6 +551,7 @@ function checkPassword() {
     document.getElementById("loginPage").classList.add("hidden");
     document.getElementById("storyPage").classList.remove("hidden");
     renderPage();
+    document.getElementById("bgm").play(); /* 1.01 Add */
   } else {
     errorMessage.textContent = "密碼怎麼能打錯呢 ♡";
   }

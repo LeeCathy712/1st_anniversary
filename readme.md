@@ -1,6 +1,6 @@
-# Author : Catherine Lee
-
 # 1st Anniversary Website
+
+Author : Catherine Lee
 
 This is a memory website created for our first anniversary.
 

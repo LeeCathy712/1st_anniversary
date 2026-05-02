@@ -3,6 +3,7 @@
   version      date            author            Remark
   ========================================================================================
   1.00         2026.04.30      Catherine         First edition release
+  1.01         2026.05.02      Catherine         Add 4/12 & 5/1 date
   ========================================================================================
 */
 
@@ -454,13 +455,17 @@ const pages = [
                 "images/hangyodon_daddy_4.jpg",
                 "images/hangyodon_penguin_daddy_5.jpg",
                 "images/hangyodon_penguin_daddy_6.jpg",
-                "images/hangyodon_penguin_daddy_7.jpg"
+                "images/hangyodon_penguin_daddy_7.jpg",
+                /* 1.01 Start*/
+                "images/hangyodon_penguin_daddy_8.jpg",
+                "images/hangyodon_penguin_daddy_9.jpg"
+                /* 1.01 End */
             ]
   },
   {
     date: "2026.04.11",
     title: "親親",
-    text: "我的上唇 + 你的下唇 = 親親(變態版)",
+    text: "我的上唇 + 你的下唇 = 親親 (變態版)",
     images: ["images/kiss.jpg"]
   },
   {
@@ -472,6 +477,21 @@ const pages = [
                 "images/singingP_laghingGranny_2.jpg"
             ]
   },
+  /* 1.01 Start*/
+  {
+    date: "2026.05.01",
+    title: "穿著普拉達的惡魔2",
+    text: "看電影吶\n" +
+          "屁還抽到隱藏款比奇堡的居民 厲害吶\n" +
+          "在公園還帶頓頓跟鵝鵝盪輪胎鞦韆吶",
+    images: [
+                "images/prada_1.jpg",
+                "images/prada_2.jpg",
+                "images/prada_3.jpg",
+                "images/prada_4.jpg"
+            ]
+  },
+  /* 1.01 End */
   {
     date: "2025 ~ 2026",
     title: "Study 碎片",

@@ -457,8 +457,7 @@ const pages = [
                 "images/hangyodon_penguin_daddy_6.jpg",
                 "images/hangyodon_penguin_daddy_7.jpg",
                 /* 1.01 Start*/
-                "images/hangyodon_penguin_daddy_8.jpg",
-                "images/hangyodon_penguin_daddy_9.jpg"
+                "images/hangyodon_penguin_daddy_8.jpg"
                 /* 1.01 End */
             ]
   },

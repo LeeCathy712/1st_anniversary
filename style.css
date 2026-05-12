@@ -3,6 +3,7 @@
   version      date            author            Remark
   ========================================================================================
   1.00         2026.04.30      Catherine         First edition release
+  1.01         2026.05.09      Catherine         Change Last Page
   ========================================================================================
 */
 
@@ -319,7 +320,89 @@ button:hover {
   background: #dfa878;
   color: white;
 }
+
+/* 1.01 Add Start */
+.menu-group {
+  margin-bottom: 12px;
+}
+
+.menu-group-title {
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #f4e3d6;
+}
+
+.menu-group-content {
+  margin-top: 8px;
+}
+
+.menu-group-content.hidden {
+  display: none;
+}
+/* 1.01 Add End */
 /*選單*/
+
+/* 1.01 Add Start */
+/* Last Page */
+.ending-cinema {
+  width: 100%;
+  padding: 20px 28px 10px;
+  text-align: center;
+}
+
+.ending-text {
+  min-height: 260px;
+  white-space: pre-line;
+  line-height: 2;
+  font-size: 17px;
+  color: #4a3b35;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.ending-text.show {
+  opacity: 1;
+}
+
+.ending-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.ending-buttons button {
+  margin-top: 0;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .ending-cinema {
+    padding: 12px 20px 6px;
+  }
+
+  .ending-text {
+    min-height: 320px;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .ending-buttons button {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+}
+/* Last Page */
+/* 1.01 Add End */
 
 /* 手機版 */
 @media (max-width: 480px) {

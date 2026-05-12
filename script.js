@@ -4,6 +4,8 @@
   ========================================================================================
   1.00         2026.04.30      Catherine         First edition release
   1.01         2026.05.02      Catherine         Add 4/12 & 5/1 date & BGM
+  1.02         2026.05.09      Catherine         Change Last Page
+  1.03         2026.05.12      Catherine         Change function getEndingDuration
   ========================================================================================
 */
 
@@ -526,7 +528,24 @@ const pages = [
                 ],
     images: ["images/wishlist.jpg"]
   },
+  /* 1.02 Add Start */
   {
+  title: "To my cutie 屁",
+  type: "endingCinema",
+  paragraphs: [
+    "謝謝屁陪我走完一年\n雖然我可能不是個完美的女友 但我會繼續對你好的\n明年要一起成為更好的人吶",
+    "謝謝屁包容敏感的屁\n畢竟你是我第一個正二八經談的男友 有時候會亂想、會害怕",
+    "屁不太會表達 但屁很多優點我都看在眼裡\n屁生病受傷的時候屁都會緊張 但不是只有一張嘴 會有行動\n屁會保護怕地震的屁\n屁不會覺得 365 元的鹹酥雞很拜金 雖然我們沒那麼吃過",
+    "是你讓屁知道談戀愛是什麼樣子\n是會有人記得我的害怕、接住我的情緒\n謝謝屁用陪伴、踏實、給屁安全感\n讓屁敢往前靠近你吶",
+    "未來我們要繼續吃很多好吃的、去很多地方、經歷很多事\n會吵吵鬧鬧 但會一直和好的吶",
+    "雖然以後可能會越來越忙 沒有今年的精彩\n但屁想跟你繼續精彩下去\n不知道怎麼講吶 可能是就算沒幹嘛 忙裡偷閒也會想跟你待在一起\n想聽你的聲音 捏你的肚肚 連發呆也想跟你一起(你呆呆)",
+    "以後也請多指教吶\n哼 我們的故事還未完待續呢\n希望往後的日子裡你都能開開心心的",
+    "一周年快樂吶 我的屁屁寶♡"
+  ]
+}
+  /* 1.02 Add End */
+  /* 1.02 Mark Start */
+  /*{
     title: "To my cutie 屁",
     text:  "謝謝屁陪我走完一年 我們的故事還未完待續呢\n" +
            "希望往後的日子裡你都能開開心心的\n" +
@@ -539,7 +558,8 @@ const pages = [
            "以後也請多指教吶\n" +
            "一周年快樂 我的屁屁寶♡\n",
     images: ["images/our_cuties.jpg"]
-  }
+  }*/
+ /* 1.02 Mark End */
 ];
 
 function checkPassword() {
@@ -552,7 +572,7 @@ function checkPassword() {
     renderPage();
     document.getElementById("bgm").play(); /* 1.01 Add */
   } else {
-    errorMessage.textContent = "密碼怎麼能打錯呢 ♡";
+    errorMessage.textContent = "密碼怎麼能打錯呢哼 ♡";
   }
 }
 
@@ -563,6 +583,13 @@ function renderPage() {
   const titleEl = document.getElementById("storyTitle");
   const textEl = document.getElementById("storyText");
   const photoSlider = document.getElementById("photoSlider");
+  const endingCinema = document.getElementById("endingCinema"); /* 1.02 Add */
+
+  /* 1.02 Add Start */
+  // 每次換頁都先關掉 ending 動畫頁
+  clearEndingTimer();
+  endingCinema.classList.add("hidden");
+  /* 1.02 Add End */
 
   // 每次換頁都先重設內容
   dateEl.textContent = "";
@@ -577,7 +604,26 @@ function renderPage() {
 
     textEl.style.display = "block";
     textEl.textContent = page.text || "";
-  } else {
+  }
+  /* 1.02 Add Start */
+  else if (page.type === "endingCinema") {
+    dateEl.style.display = "none";
+    photoSlider.style.display = "none";
+    textEl.style.display = "none";
+
+    endingCinema.classList.remove("hidden");
+
+    titleEl.textContent = page.title || "";
+
+    startEndingCinema(page.paragraphs);
+
+    renderChecklist(page);
+    renderDots();
+    renderMenu();
+    return;
+  }
+  /* 1.02 Add End */
+  else {
     dateEl.style.display = "block";
     photoSlider.style.display = "flex";
     textEl.style.display = "block";
@@ -898,6 +944,90 @@ function renderMenu() {
     menuList.appendChild(item);
   });
 }
+
+/* 1.02 Add Start */
+/* ending 動畫功能 */
+let endingTimer = null;
+let endingIndex = 0;
+let endingParagraphs = [];
+
+/* 1.03 Mark Start */
+/* function getEndingDuration(text) {
+  const base = text.length * 60;
+  return Math.max(10000, base);
+} */
+/* 1.03 Mark End */
+/* 1.03 Add Start */
+function getEndingDuration(text, index) {
+  // 最後一句停久一點
+  if (index === endingParagraphs.length - 1) {
+    return 12000;
+  }
+
+  // 每個字的閱讀時間
+  const duration = text.length * 135;
+
+  // 最少 5 秒
+  // 最多 10 秒
+  return Math.max(5000, Math.min(duration, 10000));
+}
+/* 1.03 Add End */
+
+function clearEndingTimer() {
+  if (endingTimer) {
+    clearTimeout(endingTimer);
+    endingTimer = null;
+  }
+}
+
+function startEndingCinema(paragraphs) {
+  clearEndingTimer();
+
+  endingParagraphs = paragraphs;
+  endingIndex = 0;
+
+  showEndingParagraph();
+}
+
+function showEndingParagraph() {
+  const endingText = document.getElementById("endingText");
+
+  endingText.classList.remove("show");
+
+  setTimeout(function () {
+    endingText.textContent = endingParagraphs[endingIndex];
+    endingText.classList.add("show");
+
+    /* const duration = getEndingDuration(endingParagraphs[endingIndex]); */ /* 1.03 Mark */
+    /* 1.03 Add Start */
+    const duration = getEndingDuration(
+      endingParagraphs[endingIndex],
+      endingIndex
+    );
+    /* 1.03 Add End */
+
+    if (endingIndex < endingParagraphs.length - 1) {
+      endingTimer = setTimeout(function () {
+        endingIndex++;
+        showEndingParagraph();
+      }, duration);
+    }
+  }, 800);
+}
+
+function showFullEnding() {
+  clearEndingTimer();
+
+  const endingText = document.getElementById("endingText");
+  endingText.classList.add("show");
+  endingText.textContent = endingParagraphs.join("\n\n");
+}
+
+function restartEnding() {
+  startEndingCinema(endingParagraphs);
+}
+/* ending 動畫功能 */
+/* 1.02 Add End */
 
 /* 電腦鍵盤左右鍵切頁 */
 document.addEventListener("keydown", function (event) {

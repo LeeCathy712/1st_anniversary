@@ -4,6 +4,8 @@
     ========================================================================================
     1.00         2026.04.30      Catherine         First edition release
     1.01         2026.05.02      Catherine         Add BGM
+    1.02         2026.05.09      Catherine         Change Last Page
+    1.03         2026.05.12      Catherine         Change version type into date-version_number
     ========================================================================================
 -->
 
@@ -13,7 +15,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>我們的一周年</title>
-  <link rel="stylesheet" href="style.css?v=20260428-1">
+  <link rel="stylesheet" href="style.css?v=20260512-3"><!-- 1.03 Change version type -->
 </head>
 
 <body>
@@ -34,7 +36,7 @@
   <section id="storyPage" class="page story-page hidden">
     <!-- 1.01 Change Start -->
     <audio id="bgm" loop preload="auto">
-      <source src="music/bgm.mp3" type="audio/mpeg">
+      <source src="music/bgm.mp3" type="audio/mp4">
     </audio>
     <!-- 1.01 Change End -->
 
@@ -54,6 +56,16 @@
       </div>
       <p id="storyText"></p>
       <div id="checklistArea"></div>
+
+      <!-- 1.02 Add Start -->
+      <div id="endingCinema" class="ending-cinema hidden">
+        <div id="endingText" class="ending-text"></div>
+        <div class="ending-buttons">
+          <button onclick="showFullEnding()">一次看完</button>
+          <button onclick="restartEnding()">重看動畫</button>
+        </div>
+      </div>
+      <!-- 1.02 Add End -->
 
       <div class="dots" id="pageDots"></div>
     </div>

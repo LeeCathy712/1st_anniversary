@@ -508,8 +508,7 @@ const pages = [
     images: [
                 "images/asecl_1.jpg", "images/asecl_2.jpg", "images/asecl_3.jpg",
                 "images/asecl_4.jpg", "images/asecl_5.jpg", "images/asecl_6.jpg",
-                "images/asecl_7.jpg", "images/asecl_8.jpg", "images/asecl_9.jpg",
-                "images/asecl_10.jpg"
+                "images/asecl_7.jpg", "images/asecl_8.jpg", "images/asecl_9.jpg"
             ]
   },
   {

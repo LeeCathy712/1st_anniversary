@@ -351,6 +351,16 @@ button:hover {
   width: 100%;
   padding: 20px 28px 10px;
   text-align: center;
+
+  overflow: hidden;
+}
+
+/* 電腦版永遠不出 scrollbar */
+@media (min-width: 481px) {
+  .ending-cinema.full-mode {
+    overflow: hidden;
+    max-height: none;
+  }
 }
 
 .ending-text {
@@ -385,15 +395,33 @@ button:hover {
   font-size: 14px;
 }
 
+/* 手機版 */
 @media (max-width: 480px) {
+
   .ending-cinema {
     padding: 12px 20px 6px;
+    overflow: hidden;
+  }
+
+  /* 只有手機版 full-mode 能滑 */
+  .ending-cinema.full-mode {
+    max-height: 58dvh;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
   }
 
   .ending-text {
     min-height: 320px;
     font-size: 14px;
     line-height: 1.9;
+  }
+
+  /* full-mode 才改成長文模式 */
+  .ending-cinema.full-mode .ending-text {
+    display: block;
+    text-align: left;
+    min-height: auto;
   }
 
   .ending-buttons button {
@@ -487,6 +515,22 @@ button:hover {
   color: #b0805c;
   font-size: 14px;
   line-height: 1;
+  }
+
+  .ending-cinema {
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .ending-cinema.full-mode {
+    max-height: 58dvh;
+    overflow-y: auto;
+  }
+
+  .ending-cinema.full-mode .ending-text {
+    display: block;
+    text-align: left;
+    min-height: auto;
   }
 }
 /* 手機版 */

@@ -6,6 +6,7 @@
   1.01         2026.05.02      Catherine         Add 4/12 & 5/1 date & BGM
   1.02         2026.05.09      Catherine         Change Last Page
   1.03         2026.05.12      Catherine         Change function getEndingDuration
+  1.04         2026.05.19      Catherine         Add 5/6 & 5/11 & 5/18
   ========================================================================================
 */
 
@@ -490,6 +491,35 @@ const pages = [
             ]
   },
   /* 1.01 End */
+  /* 1.04 Start*/
+  {
+    date: "2026.05.03",
+    title: "屁給屁買週年禮物吶",
+    text: "屁帥氣 屁威武 屁真好",
+    images: ["images/anniversary_gift.jpg"]
+  },
+  {
+    date: "2026.05.06",
+    title: "騷包屁比愛心吶",
+    text: "屁真好看",
+    images: ["images/beautiful_heart_P.jpg"]
+  },
+  {
+    date: "2026.05.11",
+    title: "學我睡覺屁",
+    text: "哼我才迷有這樣呢哼",
+    images: ["images/sleep_P.jpg"]
+  },
+  {
+    date: "2026.05.18",
+    title: "阿伯屁",
+    text: "洗衣服吶",
+    images: [
+                "images/oldP_1.jpg",
+                "images/oldP_2.jpg"
+            ]
+  },
+  /* 1.04 End */
   {
     date: "2025 ~ 2026",
     title: "Study 碎片",
@@ -504,7 +534,7 @@ const pages = [
   {
     date: "2025.02.03 ~ 2026.01.30",
     title: "一些光光幼兒園碎片",
-    text: "我的屁綁啾啾！",
+    text: "想當年我們可是從光光的員工餐廳擦出火花的呢\n快看 我的屁綁啾啾！",
     images: [
                 "images/asecl_1.jpg", "images/asecl_2.jpg", "images/asecl_3.jpg",
                 "images/asecl_4.jpg", "images/asecl_5.jpg", "images/asecl_6.jpg",
@@ -980,6 +1010,8 @@ function clearEndingTimer() {
 function startEndingCinema(paragraphs) {
   clearEndingTimer();
 
+  document.getElementById("endingCinema").classList.remove("full-mode");
+
   endingParagraphs = paragraphs;
   endingIndex = 0;
 
@@ -1015,12 +1047,20 @@ function showEndingParagraph() {
 function showFullEnding() {
   clearEndingTimer();
 
+  const endingCinema = document.getElementById("endingCinema");
   const endingText = document.getElementById("endingText");
+
+  endingCinema.classList.add("full-mode");
+
   endingText.classList.add("show");
   endingText.textContent = endingParagraphs.join("\n\n");
 }
 
 function restartEnding() {
+  const endingCinema = document.getElementById("endingCinema");
+
+  endingCinema.classList.remove("full-mode");
+
   startEndingCinema(endingParagraphs);
 }
 /* ending 動畫功能 */

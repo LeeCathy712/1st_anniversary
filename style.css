@@ -550,7 +550,7 @@ button:hover {
 
   .ending-cinema.full-mode .ending-text {
     display: block;
-    text-align: left;
+    text-align: center;
     min-height: auto;
   }
 }

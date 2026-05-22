@@ -4,6 +4,7 @@
   ========================================================================================
   1.00         2026.04.30      Catherine         First edition release
   1.01         2026.05.09      Catherine         Change Last Page
+  1.02         2026.05.09      Catherine         Change First Page Settings
   ========================================================================================
 */
 
@@ -344,6 +345,26 @@ button:hover {
 }
 /* 1.01 Add End */
 /*選單*/
+
+/* 1.02 Add Start */
+.start-story-btn {
+  margin: 18px auto 0;
+  padding: 10px 22px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #d9a87c;
+  color: white;
+
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.start-story-btn:hover {
+  background: #c98f64;
+}
+/* 1.02 Add End */
 
 /* 1.01 Add Start */
 /* Last Page */

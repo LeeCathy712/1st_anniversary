@@ -7,6 +7,7 @@
   1.02         2026.05.09      Catherine         Change Last Page
   1.03         2026.05.12      Catherine         Change function getEndingDuration
   1.04         2026.05.19      Catherine         Add 5/6 & 5/11 & 5/18
+  1.05         2026.05.23      Catherine         Change First Page Settings
   ========================================================================================
 */
 
@@ -17,10 +18,10 @@ let isMusicPlaying = false;
 
 const pages = [
   {
+    type: "coverStart",/* 1.02 Add */
     date: "2025.06.23 - 2026.06.23",
     title: "一週年快樂",
-    text: "資工人要用資工人的方式過一週年！",
-    images: ["images/cover.jpg"]
+    text: "資工人要用資工人的方式過一週年！"
   },
   {
     date: "2025.07.02",
@@ -612,6 +613,11 @@ function renderPage() {
   const photoSlider = document.getElementById("photoSlider");
   const endingCinema = document.getElementById("endingCinema"); /* 1.02 Add */
 
+  /* 1.05 Add Start */
+  const startStoryBtn = document.getElementById("startStoryBtn");
+  startStoryBtn.classList.add("hidden");
+  /* 1.05 Add End */
+
   /* 1.02 Add Start */
   // 每次換頁都先關掉 ending 動畫頁
   clearEndingTimer();
@@ -625,7 +631,24 @@ function renderPage() {
 
   titleEl.textContent = page.title || "";
 
-  if (page.type === "checklist") {
+  /* 1.05 Add Start */
+  if (page.type === "coverStart") {
+    dateEl.style.display = "block";
+    photoSlider.style.display = "none";
+    textEl.style.display = "block";
+
+    dateEl.textContent = page.date || "";
+    textEl.textContent = page.text || "";
+
+    startStoryBtn.classList.remove("hidden");
+
+    renderChecklist(page);
+    renderDots();
+    renderMenu();
+    return;
+  }
+  /* 1.05 Add End */
+  else if (page.type === "checklist") {
     dateEl.style.display = "none";
     photoSlider.style.display = "none";
 
@@ -665,6 +688,21 @@ function renderPage() {
   renderDots();
   renderMenu();
 }
+
+/* 1.05 Add Start */
+function startStory() {
+  const bgm = document.getElementById("bgm");
+
+  bgm.volume = 0.7;
+
+  bgm.play().catch(function (error) {
+    console.log("音樂播放失敗：", error);
+  });
+
+  currentPage = 1;
+  renderPage();
+}
+/* 1.05 Add End */
 
 function renderPhotos(images) {
   const photoSlider = document.getElementById("photoSlider");

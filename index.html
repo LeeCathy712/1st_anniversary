@@ -6,6 +6,7 @@
     1.01         2026.05.02      Catherine         Add BGM
     1.02         2026.05.09      Catherine         Change Last Page
     1.03         2026.05.12      Catherine         Change version type into date-version_number
+    1.04         2026.05.12      Catherine         Change First Page Settings
     ========================================================================================
 -->
 
@@ -15,7 +16,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>我們的一周年</title>
-  <link rel="stylesheet" href="style.css?v=20260519-10"><!-- 1.03 Change version type -->
+  <link rel="stylesheet" href="style.css?v=20260523-10"><!-- 1.03 Change version type -->
 </head>
 
 <body>
@@ -51,10 +52,19 @@
     <div class="story-card">
       <p id="storyDate" class="story-date"></p>
       <h1 id="storyTitle"></h1>
+
       <div class="photo-touch-zone">
         <div class="photo-slider" id="photoSlider"></div>
       </div>
+
       <p id="storyText"></p>
+
+      <!-- 1.04 Add Start -->
+      <button id="startStoryBtn" class="start-story-btn hidden" onclick="startStory()">
+        開始故事
+      </button>
+      <!-- 1.04 Add End -->
+
       <div id="checklistArea"></div>
 
       <!-- 1.02 Add Start -->

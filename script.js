@@ -695,7 +695,6 @@ function startStory() {
 
   bgm.muted = false;
   bgm.volume = 0.7;
-  bgm.currentTime = 0;
 
   const playPromise = bgm.play();
 

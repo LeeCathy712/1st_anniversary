@@ -696,17 +696,10 @@ function startStory() {
   bgm.muted = false;
   bgm.volume = 0.7;
 
-  const playPromise = bgm.play();
-
-  if (playPromise !== undefined) {
-    playPromise
-      .then(function () {
-        console.log("音樂播放成功");
-      })
-      .catch(function (error) {
-        console.log("音樂播放失敗：", error);
-        alert("手機瀏覽器擋住自動播放，請按右上角音樂按鈕播放 ♫");
-      });
+  if (bgm.paused) {
+    bgm.play().catch(function (error) {
+      console.log("音樂播放失敗：", error);
+    });
   }
 
   currentPage = 1;

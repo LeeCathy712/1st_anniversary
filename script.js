@@ -693,11 +693,22 @@ function renderPage() {
 function startStory() {
   const bgm = document.getElementById("bgm");
 
+  bgm.muted = false;
   bgm.volume = 0.7;
+  bgm.currentTime = 0;
 
-  bgm.play().catch(function (error) {
-    console.log("音樂播放失敗：", error);
-  });
+  const playPromise = bgm.play();
+
+  if (playPromise !== undefined) {
+    playPromise
+      .then(function () {
+        console.log("音樂播放成功");
+      })
+      .catch(function (error) {
+        console.log("音樂播放失敗：", error);
+        alert("手機瀏覽器擋住自動播放，請按右上角音樂按鈕播放 ♫");
+      });
+  }
 
   currentPage = 1;
   renderPage();
@@ -873,12 +884,15 @@ function prevPage() {
 function toggleMusic() {
   const bgm = document.getElementById("bgm");
 
-  if (isMusicPlaying) {
-    bgm.pause();
-    isMusicPlaying = false;
+  bgm.muted = false;
+  bgm.volume = 0.7;
+
+  if (bgm.paused) {
+    bgm.play().catch(function (error) {
+      console.log("手動播放失敗：", error);
+    });
   } else {
-    bgm.play();
-    isMusicPlaying = true;
+    bgm.pause();
   }
 }
 

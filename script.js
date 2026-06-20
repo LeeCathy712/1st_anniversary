@@ -8,6 +8,8 @@
   1.03         2026.05.12      Catherine         Change function getEndingDuration
   1.04         2026.05.19      Catherine         Add 5/6 & 5/11 & 5/18
   1.05         2026.05.23      Catherine         Change First Page Settings
+  1.06         2026.06.11      Catherine         Add 5/6 & 5/11 & 5/18
+  1.07         2026.06.19      Catherine         Add 5/29 & 6/06；ASECL change order
   ========================================================================================
 */
 
@@ -360,6 +362,19 @@ const pages = [
     text: "先生 你懷的是我看電影要用的衛生紙嗎？是。",
     images: ["images/movie_cry.jpg"]
   },
+  /* 1.07 Change order */
+  {
+    date: "2025.02.03 ~ 2026.01.30",
+    title: "一些光光幼兒園碎片",
+    text: "想當年我們可是從光光的員工餐廳擦出火花的呢\n快看 我的屁綁啾啾！",
+    images: [
+                "images/asecl_1.jpg", "images/asecl_2.jpg", "images/asecl_3.jpg",
+                "images/asecl_4.jpg", "images/asecl_5.jpg", "images/asecl_6.jpg",
+                "images/asecl_7.jpg", "images/asecl_8.jpg", "images/asecl_9.jpg",
+                "images/asecl_10.jpg"
+            ]
+  },
+  /* 1.07 Change order */
   {
     date: "2026.02.02",
     title: "乳液",
@@ -522,6 +537,57 @@ const pages = [
             ]
   },
   /* 1.04 End */
+  /* 1.07 Start */
+  {
+    date: "2026.05.20",
+    title: "日本團拍畢業照",
+    text: "住我們畢業快樂吶！",
+    images: [
+                "images/gradPhoto_with_gradTripGuys_1.jpg", "images/gradPhoto_with_gradTripGuys_2.jpg",
+                "images/gradPhoto_with_gradTripGuys_3.jpg", "images/gradPhoto_with_gradTripGuys_4.jpg",
+                "images/gradPhoto_with_gradTripGuys_5.jpg", "images/gradPhoto_with_gradTripGuys_6.jpg",
+                "images/gradPhoto_with_gradTripGuys_7.jpg", "images/gradPhoto_with_gradTripGuys_8.jpg",
+                "images/gradPhoto_with_gradTripGuys_9.jpg", "images/gradPhoto_with_gradTripGuys_10.jpg",
+                "images/gradPhoto_with_gradTripGuys_11.jpg", "images/gradPhoto_with_gradTripGuys_12.jpg",
+                "images/gradPhoto_with_gradTripGuys_13.jpg", "images/gradPhoto_with_gradTripGuys_14.jpg"
+            ]
+  },
+  {
+    date: "2026.05.29",
+    title: "系畢典！",
+    text: "屁也是當上博士生了！",
+    images: [
+                "images/cse_grad_1.jpg",
+                "images/cse_grad_2.jpg",
+                "images/cse_grad_3.jpg"
+            ]
+  },
+  {/* 1.07 Note:還要添加新照片 */
+    date: "2026.06.06",
+    title: "校畢典！",
+    text: "穿襯衫打領帶的屁帥得要死",
+    images: [
+                "images/school_grad_1.jpg",
+                "images/school_grad_2.jpg",
+                "images/school_grad_3.jpg",
+                "images/school_grad_4.jpg",
+                "images/school_grad_5.jpg"
+            ]
+  },
+  {
+    date: "2026.06.13",
+    title: "給東吳薑氏買畢業花花",
+    text: "哼 屁的視角怎麼辣麼高 哼",
+    images: [
+                "images/flower_for_dongwu_wife_1.jpg",
+                "images/flower_for_dongwu_wife_2.jpg",
+                "images/flower_for_dongwu_wife_3.jpg",
+                "images/flower_for_dongwu_wife_4.jpg",
+                "images/flower_for_dongwu_wife_5.jpg",
+                "images/flower_day_handsomeP.jpg"
+            ]
+  },
+  /* 1.07 End */
   {
     date: "2025 ~ 2026",
     title: "Study 碎片",
@@ -531,17 +597,6 @@ const pages = [
                 "images/study5.jpg", "images/study6.jpg", "images/study7.jpg", "images/study8.jpg",
                 "images/study9.jpg", "images/study10.jpg", "images/study11.jpg", "images/study12.jpg",
                 "images/study13.jpg", "images/study14.jpg"
-            ]
-  },
-  {
-    date: "2025.02.03 ~ 2026.01.30",
-    title: "一些光光幼兒園碎片",
-    text: "想當年我們可是從光光的員工餐廳擦出火花的呢\n快看 我的屁綁啾啾！",
-    images: [
-                "images/asecl_1.jpg", "images/asecl_2.jpg", "images/asecl_3.jpg",
-                "images/asecl_4.jpg", "images/asecl_5.jpg", "images/asecl_6.jpg",
-                "images/asecl_7.jpg", "images/asecl_8.jpg", "images/asecl_9.jpg",
-                "images/asecl_10.jpg"
             ]
   },
   {
